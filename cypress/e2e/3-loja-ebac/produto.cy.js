@@ -19,6 +19,7 @@ describe('Funcionalidade: Produtos', () => {
             .eq(2)
             .click()
         cy.get('#tab-title-additional_information > a').should('contain', 'Informação adicional')
+        // deve conter o nome todo do item a ser verificado, pois do contrário vai quebrarS
         cy.get('.product-block')
             .contains('Oslo Trek Hoodie')
             .click()

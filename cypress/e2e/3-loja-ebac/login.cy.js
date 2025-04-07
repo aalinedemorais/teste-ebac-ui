@@ -40,13 +40,19 @@ describe('Funcionalidade: Login', () => {
     });
 
     //massa de dados pelo método nativo cypress
-    it.only('Deve fazer login com sucesso usando fixture', () => {
-        cy.fixture('perfil').then( dados => {
+    it('Deve fazer login com sucesso usando fixture', () => {
+        cy.fixture('perfil').then(dados => {
             cy.get('#username').type(dados.usuario)
-            cy.get('#password').type(dados.senha , {log: false})
+            cy.get('#password').type(dados.senha, { log: false })
             cy.get('.woocommerce-form > .button').click()
-            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, amora (não é amora? Sair)')   
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, amora (não é amora? Sair)')
         })
+    });
+
+    //pode ser utilizado o usuário fixo, faker ou fixture 
+    it.only('Deve fazer login com sucesso usando Comandos Customizados', () => {
+        cy.login('amora@uorak.com', 'teste123')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)').should('contain', 'Olá, amora (não é amora? Sair)')
     });
 
 })
