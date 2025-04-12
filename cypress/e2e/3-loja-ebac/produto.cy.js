@@ -25,5 +25,19 @@ describe('Funcionalidade: Produtos', () => {
             .click()
         cy.get('.product_title').should('contain', 'Oslo Trek Hoodie')
 
+    
     });
+
+    it('Deve buscar um produto com sucesso', () => {
+
+    });
+
+    it('Deve visitar a página do produto', () => {
+
+    });
+
+    it('Deve adicionar produto ao carrinho', () => {
+
+    });
+
 });

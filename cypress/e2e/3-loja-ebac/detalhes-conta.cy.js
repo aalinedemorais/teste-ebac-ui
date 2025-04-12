@@ -13,7 +13,8 @@ describe('Funcionalidade: Detalhes da conta', () => {
     });
 
     it('Deve completar detalhes da conta com sucesso', () => {
-       cy.detalhesConta('Fulano', 'Tal', 'fulano.tal')
+        //cy.get('elemento').clear().type('texto')
+        cy.detalhesConta('Fulano', 'Tal', 'fulano.tal')
        cy.get('.woocommerce-message').should('exist')
     });
 
